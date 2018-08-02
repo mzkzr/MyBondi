@@ -1,4 +1,4 @@
-package Model;
+package Entity;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
@@ -37,10 +37,5 @@ public class Localidad {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    @Override
-    public String toString() {
-        return Integer.toString(this.cp) + "\n" + this.nombre;
     }
 }

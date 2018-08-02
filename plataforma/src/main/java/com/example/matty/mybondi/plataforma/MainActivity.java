@@ -1,5 +1,6 @@
 package com.example.matty.mybondi.plataforma;
 
+import android.arch.persistence.room.Room;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -7,9 +8,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
-
 import java.util.Arrays;
 import java.util.List;
+import Database.MyBondiDB;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,6 +18,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        MyBondiDB db = Room.databaseBuilder(getApplicationContext(),
+                MyBondiDB.class, "MyBondiDB").build();
 
         final Spinner origen = findViewById(R.id.spinner);
         Spinner destino = findViewById(R.id.spinner2);
